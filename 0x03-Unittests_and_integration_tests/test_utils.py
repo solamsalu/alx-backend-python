@@ -55,15 +55,12 @@ class TestMemoize(unittest.TestCase):
     def test_memoize(self, mock_a_method):
         test_obj = TestClass()
 
-        # Call a_property twice
         res1 = test_obj.a_property
         res2 = test_obj.a_property
 
-        # Check that the correct result is returned
         self.assertEqual(res1, 42)
         self.assertEqual(res2, 42)
 
-        # Check that a_method is only called once
         mock_a_method.assert_called_once()
 
 
